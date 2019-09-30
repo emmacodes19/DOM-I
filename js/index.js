@@ -52,7 +52,9 @@ code_snippets.setAttribute('src', siteContent['main-content'] ['middle-img-src']
 // Title 
 
 const title = document.querySelector('h1');
-title.textContent = 'DOM is Awesome';
+title.innerHTML = 'DOM <br> is <br> Awesome';
+title.style.display="flex";
+
 
 //Button
 
@@ -110,9 +112,10 @@ const contact = document.querySelector('.contact h4');
 contact.innerHTML = siteContent['contact'] ['contact-h4'];
 
 const info = document.querySelectorAll('.contact p');
-info[0].innerHTML = siteContent['contact'] ['address'];
-info[1].innerHTML = siteContent['contact'] ['phone'];
-info[2].innerHTML = siteContent['contact'] ['email'];
+info[0].textContent = siteContent['contact'] ['address'];
+info[0].innerHTML= '123 Way 456 Street <br> Somewhere, USA'
+info[1].textContent = siteContent['contact'] ['phone'];
+info[2].textContent = siteContent['contact'] ['email'];
 
 
 
@@ -122,19 +125,42 @@ const copy = document.querySelector('footer p');
 copy.textContent = 'Copyright Great Idea! 2018';
 
 
+// Create 2 item in NAV 
+
+
 // Item Creation Step 1: create a new element
 const newText = document.createElement("a");
 // Item Creation Step 2: add some content to the newly created div
-newText.textContent = "prepend";
+newText.textContent = "Lambda";
+newText.setAttribute('href', 'https://lambdaschool.com/');
 // Item Creation Step 3: prepend or append the element to an existing DOM node on the page
 const parentContent = document.querySelector('nav');
 parentContent.prepend(newText);
+newText.style.color="red";
+
 
 
 const newAnchor = document.createElement('a');
-newAnchor.textContent = "apprendChild";
+newAnchor.textContent = "DOM I";
+newAnchor.setAttribute('href', 'https://learn.lambdaschool.com/web2/module/recJWv3RIfa4NFXbn/#prepare');
+
 
 const newParent = document.querySelector('nav');
 newParent.appendChild(newAnchor);
+newAnchor.style.color = "blue";
+
+
+
+
+
+//Trying to add a background Image //
+
+//  const newImage = document.createElement('IMG');
+//  newImage.setAttribute('src','https://images.unsplash.com/photo-1568369160472-27f9997995e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+
+//   const parentImg = document.querySelector('footer');
+//   parentImg.prepend(newImage);
+//   newAnchor.style.backgroundImage="url ('https://images.unsplash.com/photo-1568369160472-27f9997995e1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80')"
+
 
 
